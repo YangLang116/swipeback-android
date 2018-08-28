@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="18dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可配置参数"
+            android:textColor="#333333"
+            android:textSize="18sp" />
+
+        <Switch
+            android:id="@+id/sw_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:checked="true"
+            android:text="1. 是否允许滑动返回："
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. 设置滑动返回的方向："
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="水平"
+                    android:textColor="#666666"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:checked="false"
+                    android:text="垂直"
+                    android:textColor="#666666"
+                    android:textSize="15sp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_sensitive_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. 设置滑动返回敏感区域(55%):"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <SeekBar
+                android:id="@+id/sb_sensitive_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:min="0"
+                android:progress="55" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="4. 设置返回蒙层颜色:"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A (153)"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <SeekBar
+                android:id="@+id/sb_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:min="0"
+                android:progress="153" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R (000)"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <SeekBar
+                android:id="@+id/sb_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:min="0"
+                android:progress="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="G (000)"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <SeekBar
+                android:id="@+id/sb_g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:min="0"
+                android:progress="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B (000)"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <SeekBar
+                android:id="@+id/sb_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:min="0"
+                android:progress="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. 设置滑动返回速度:"
+                android:textColor="#666666"
+                android:textSize="15sp" />
+
+            <SeekBar
+                android:id="@+id/sb_speed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="1000"
+                android:min="0"
+                android:progress="400" />
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/sw_edge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:checked="true"
+            android:text="6. 是否打开边缘加深效果："
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Test" />
+
+    </LinearLayout>
+
+</ScrollView>
