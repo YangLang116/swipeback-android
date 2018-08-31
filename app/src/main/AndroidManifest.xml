@@ -9,15 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".asactivity.SwipeConfigActivity"
+            android:label="@string/config_note" />
+        <activity android:name=".asactivity.HorizontalListActivity" />
+        <activity android:name=".asactivity.VerticalListActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HorizontalListActivity" />
-        <activity android:name=".VerticalListActivity" />
+        <activity
+            android:name=".asview.SimpleImagesActivity"
+            android:label="@string/images_note" />
+        <activity
+            android:name=".withcoordinator.WithCoordinateLayoutActivity"
+            android:theme="@style/NoActionBarTransparentStyle" />
     </application>
-
 </manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    tools:context=".SplashActivity">
+
+    <Button
+        android:id="@+id/view_as_view"
+        style="@style/splash_note_btn"
+        android:onClick="onClick"
+        android:text="As View" />
+
+    <Button
+        android:id="@+id/view_with_coordinate_layout"
+        style="@style/splash_note_btn"
+        android:onClick="onClick"
+        android:text="With CoordinateLayout" />
+
+    <Button
+        android:id="@+id/view_as_activity"
+        style="@style/splash_note_btn"
+        android:onClick="onClick"
+        android:text="As Activity" />
+
+</LinearLayout>

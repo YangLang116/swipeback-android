@@ -1,8 +1,8 @@
-package com.yangl.swipedemo;
+package com.yangl.swipedemo.asactivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -10,10 +10,9 @@ import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.yangl.swipedemo.Config;
 import com.yangl.swipedemo.R;
 
-public class MainActivity extends Activity implements CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
+public class SwipeConfigActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
 
     private Config mConfig;
 
@@ -24,8 +23,12 @@ public class MainActivity extends Activity implements CompoundButton.OnCheckedCh
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_swipe_config);
         mConfig = new Config();
+        Switch fullscreenSwitch = findViewById(R.id.sw_full_screen);
+        fullscreenSwitch.setOnCheckedChangeListener(this);
+        Switch statusBarSwitch = findViewById(R.id.sw_translation_status_bar);
+        statusBarSwitch.setOnCheckedChangeListener(this);
         Switch enableSwitch = findViewById(R.id.sw_enable);
         enableSwitch.setOnCheckedChangeListener(this);
         RadioGroup orientationRadio = findViewById(R.id.rg_orientation);
@@ -62,7 +65,7 @@ public class MainActivity extends Activity implements CompoundButton.OnCheckedCh
         findViewById(R.id.btn_test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,
+                Intent intent = new Intent(SwipeConfigActivity.this,
                         mConfig.orientation == Config.HORIZONTAL ? HorizontalListActivity.class : VerticalListActivity.class);
                 intent.putExtra("data", mConfig);
                 startActivity(intent);
@@ -78,6 +81,12 @@ public class MainActivity extends Activity implements CompoundButton.OnCheckedCh
                 break;
             case R.id.sw_edge:
                 mConfig.edge = isChecked;
+                break;
+            case R.id.sw_full_screen:
+                mConfig.fullScreen = isChecked;
+                break;
+            case R.id.sw_translation_status_bar:
+                mConfig.statusBarTransparent = isChecked;
                 break;
         }
     }

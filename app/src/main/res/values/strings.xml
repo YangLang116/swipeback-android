@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SwipeDemo</string>
+    <string name="function_note">引导</string>
+    <string name="config_note">Activity封装测试</string>
+    <string name="images_note">作为控件配合Dialog使用（点击图片）</string>
+    <string name="image_dialog_tip">下滑隐藏退出Dialog,下滑进度：</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.yangl.swipedemo;
+package com.yangl.swipedemo.asactivity;
 
 import java.io.Serializable;
 
@@ -12,6 +12,9 @@ public class Config implements Serializable {
     public static final int HORIZONTAL = 0;
     public static final int VERTICAL = 1;
 
+    public boolean fullScreen;
+
+    public boolean statusBarTransparent;
     public boolean isOpen = true;
 
     public int orientation;  // 0 ： 水平  1： 垂直

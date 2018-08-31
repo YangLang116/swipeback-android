@@ -1,24 +1,21 @@
-package com.yangl.swipedemo;
+package com.yangl.swipedemo.utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.TextView;
 
 import com.yangl.swipeback.ui.SwipeBackLayout;
+import com.yangl.swipedemo.R;
+import com.yangl.swipedemo.asactivity.Config;
+import com.yangl.swipedemo.common.CommonRecyclerViewAdapter;
 
 /***
  * @Author: YangLang
  * @Version: v1.0
- * @Description: xxx
+ * @Description:
  */
 public class UiHelper {
 
@@ -28,35 +25,15 @@ public class UiHelper {
     public static final int VERTICAL = 1;
 
     public void setContent(Activity activity, int orientation) {
-        //打开用于全屏效果
-//        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         activity.setContentView(R.layout.activity_orientation_list);
         RecyclerView recyclerView = activity.findViewById(R.id.recyclerView);
         initRecyclerView(recyclerView, orientation);
     }
 
-    public void initRecyclerView(RecyclerView recyclerView, int orientation) {
+    public void initRecyclerView(RecyclerView recyclerView, final int orientation) {
         Context context = recyclerView.getContext();
-        recyclerView.setLayoutManager(new LinearLayoutManager(context,
-                orientation == HORIZONTAL ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL,
-                false));
-        recyclerView.setAdapter(new RecyclerView.Adapter<DemoViewHolder>() {
-            @NonNull
-            @Override
-            public DemoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new DemoViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false));
-            }
-
-            @Override
-            public void onBindViewHolder(@NonNull DemoViewHolder holder, int position) {
-                holder.titleView.setText("Position = " + position);
-            }
-
-            @Override
-            public int getItemCount() {
-                return 45;
-            }
-        });
+        recyclerView.setLayoutManager(new LinearLayoutManager(context, orientation == HORIZONTAL ? RecyclerView.HORIZONTAL : RecyclerView.VERTICAL, false));
+        recyclerView.setAdapter(new CommonRecyclerViewAdapter(orientation == HORIZONTAL ? R.layout.item_horizontal : R.layout.item_vertical));
     }
 
     public void setSwipeLayoutConfig(SwipeBackLayout swipeBackLayout, Config config) {
@@ -72,15 +49,5 @@ public class UiHelper {
                 Log.d(TAG, log);
             }
         });
-    }
-
-    static class DemoViewHolder extends RecyclerView.ViewHolder {
-
-        public TextView titleView;
-
-        public DemoViewHolder(View itemView) {
-            super(itemView);
-            titleView = itemView.findViewById(R.id.text);
-        }
     }
 }
