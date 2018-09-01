@@ -66,4 +66,4 @@ dependencies {
 ```
 
 ## 4. 测试Demo
-[下载地址](https://github.com/1004145468/swipeback-android)
+[下载地址](https://github.com/1004145468/swipeback-android/raw/master/app-debug.apk)
